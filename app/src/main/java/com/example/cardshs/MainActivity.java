@@ -36,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
         //связываем с основной активити
         recyclerView = findViewById(R.id.recyclerView);
+
         //передаем в адаптер лист из элементов
         recyclerView.setHasFixedSize(true);
-        adapter = new CardAdapter(cardItemsList);
+        adapter = new CardAdapter(cardItemsList, this);
+
         //делаем разметку элементов
         layoutManager = new LinearLayoutManager(this);
+
         //устанавливаем одно в другое
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
